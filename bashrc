@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export LANG="en_US.UTF-8"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -107,11 +109,6 @@ find_git_branch ()
 PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
 
 PS1='@ \[\033[01;33m\]\W\[\033[33m\]\[\033[01;36m\]$git_branch\[\033[36m\]\n${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[0m\] $ '
-
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
