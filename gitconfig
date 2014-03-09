@@ -1,0 +1,9 @@
+[user]
+	name = Hansen Fang
+	email = fhz0730@gmail.com
+[http]
+	sslVerify = false
+[core]
+	editor = vim
+[color]
+	ui = true
