@@ -5,5 +5,16 @@
 	sslVerify = false
 [core]
 	editor = vim
+    autocrlf = true
 [color]
 	ui = true
+[alias]
+    st = status
+    s = status -sb
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short --since='1 days ago'
+    histw = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short --since='1 weeks ago'
+    hista = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    oneline = log --pretty=oneline --since='2 days ago'
+    onelog = log -p -1
+    pullv = pull -v
+    diffs = diff --name-only
