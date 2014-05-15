@@ -213,14 +213,14 @@ au BufReadPre *.nfo call SetFileEncodings('cp437')|set ambiwidth=single au BufRe
 au BufRead,BufNewFile * setfiletype txt
 
 " Fold mode {indent manual syntax marker .etc}, use 'space' control
-set foldenable
+"set foldenable
 "set foldmethod=manual
 " fold mode use syntax
-set foldmethod=syntax
+"set foldmethod=syntax
 " Fold area width
-set foldcolumn=0
+"set foldcolumn=0
 " Fold level
-set foldlevel=1
+"set foldlevel=1
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc':'zo')<CR>
 
 let g:miniBufExplMapWindowNavVim = 1
@@ -271,7 +271,7 @@ set nu
 vmap <C-c> "+y
 
 " Color scheme
-colorscheme molokai
+" colorscheme molokai
 
 " Key map
 nmap <F3> :qall<CR>
