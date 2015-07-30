@@ -149,13 +149,13 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 " Use space replace tab
-set expandtab
+"set expandtab
 
 set nowrap
 
 " About Ctags
 " Sort with name
-let Tlist_Sort_Type = "name"
+" let Tlist_Sort_Type = "name"
 " Tlist show right
 let Tlist_Use_Right_Window = 1
 " Compress mode
@@ -271,17 +271,18 @@ set nu
 vmap <C-c> "+y
 
 " Color scheme
-" colorscheme molokai
+"colorscheme molokai
 
 " Key map
 nmap <F3> :qall<CR>
 nmap <F4> :wqall<CR>
+nmap <F10> :Tlist<CR>
 
 " For Bundle
 set nocompatible
 " Close file type for Bundle
 "filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/Bundle/vundle/
 call vundle#rc()
 Bundle 'vundle'
 Bundle 'winmanager'
@@ -290,4 +291,5 @@ Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'txt.vim'
 Bundle 'closetag.vim'
+
 
