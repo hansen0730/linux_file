@@ -1,12 +1,12 @@
 [user]
-	name = Hansen Fang
-	email = fhz0730@163.com
+    name = Hansen Fang
+    email = fhz0730@163.com
 [http]
-	sslVerify = false
+    sslVerify = false
 [core]
-	editor = vim
+    editor = vim
 [color]
-	ui = true
+    ui = true
 [alias]
     st = status
     s = status -sb

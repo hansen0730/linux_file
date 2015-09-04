@@ -274,8 +274,8 @@ vmap <C-c> "+y
 "colorscheme molokai
 
 " Key map
-nmap <F3> :qall<CR>
-nmap <F4> :wqall<CR>
+nmap <F8> :qall<CR>
+nmap <F9> :wqall<CR>
 nmap <F10> :Tlist<CR>
 
 " For Bundle

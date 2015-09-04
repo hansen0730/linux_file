@@ -21,4 +21,5 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+umask 0022
 /usr/local/shell/showinfo.sh 
