@@ -14,6 +14,10 @@ alias gck='git checkout'
 alias gdf='git diff'
 alias gdfs='git diff --name-only'
 
+alias tmuxn='tmux new-session -s '
+alias tmuxk='tmux kill-session -t '
+alias tmuxa='tmux att -t '
+
 export LANG="en_US.UTF-8"
 
 find_git_branch () 
