@@ -1,4 +1,5 @@
 # TODO
+alias mygrep="grep -nr --color=auto"
 
 # some more ls aliases
 alias ls='ls --color=always'
@@ -6,12 +7,15 @@ alias ll='ls -lF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias gsw='git show'
+alias gs='git status -sb'
 alias gss='git status'
+alias gsw='git show --stat --oneline '
 alias gck='git checkout'
 alias gdf='git diff'
+alias gdfs='git diff --name-only'
 
-export LANG="zh_CN.UTF-8"
+export LANG="en_US.UTF-8"
+
 find_git_branch () 
 {
     local dir=. head
@@ -38,18 +42,56 @@ PS1='@ \[\033[01;33m\]\W\[\033[33m\]\[\033[01;36m\]$git_branch\[\033[36m\]\n${de
 
 export PATH=$PATH:~/bin
 
-#export JAVA_HOME=~/android/jdk1.7.0_25
-#export JRE_HOME=~/android/jdk1.7.0_25/jre
-export JAVA_HOME=~/android/jdk1.6.0_45
-export JRE_HOME=~/android/jdk1.6.0_45/jre
-export CLASSPATH=.:${CLASSPATH}:${JAVA_HOME}/lib:${JRE_HOME}/lib
-export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:${PATH}
+proxy_enable() {
+    export http_proxy="10.125.4.66:3128"
+    export https_proxy="10.125.4.66:3128"
+    export all_proxy="socks://10.125.4.66:3128"
+}
 
-#export PATH=$PATH:~/soft/arm_4_3_3/bin
-#export PATH=$PATH:/usr/unicore/gnu-toolchain-unicore/uc4-1.0-beta-soft-RHELAS4/bin
-#export PATH=$PATH:/home/hansen/cross_tool/gcc-linaro-arm-linux-gnueabihf-4.8-2013.08_linux/bin
-#export PATH=$PATH:/home/hansen/cross_tool/gcc-linaro-arm-linux-gnueabi-2012.01-20120125_linux/bin
-#export PATH=$PATH:/home/hansen/cross_tool/arm-2010q1/bin
+proxy_disable() {
+    unset http_proxy
+    unset https_proxy
+    unset all_proxy
+}
 
-# TODO
+export OLD_PATH=$PATH
+
+toolchain_off() {
+	PATH=$OLD_PATH
+	export PATH
+}
+toolchain_arm_androideabi_47() {
+	PATH=$OLD_PATH
+	PATH=$PATH:/work/toolchain/arm-linux-androideabi-4.7/bin
+	export PATH
+}
+
+java_on() {
+    export JAVA_HOME=~/android/$JDK_VERSION
+    export JRE_HOME=$JAVA_HOME/jre
+    export ANDROID_JAVA_HOME=$JAVA_HOME
+    export CLASSPATH=.:${CLASSPATH}:${JAVA_HOME}/lib:${JRE_HOME}/lib
+	export JAVA_PATH=$JAVA_HOME/bin
+}
+java_off() {
+    export JAVA_HOME=
+    export JRE_HOME=
+    export ANDROID_JAVA_HOME=
+    export CLASSPATH=
+	export JAVA_PATH=
+}
+# Please manual set PATH about Java
+# export PATH=$JAVA_PATH:$PATH
+java_16() {
+    JDK_VERSION=jdk1.6.0_45
+    java_on;
+}
+java_17() {
+    JDK_VERSION=jdk1.7.0_79
+    java_on;
+}
+
+# Distcc client
+# Must replace gcc with distcc, have same dir of compile tools
+export DISTCC_HOSTS="shaunxand04/12:56789 localhost/8"
 

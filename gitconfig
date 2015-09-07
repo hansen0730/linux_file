@@ -8,6 +8,7 @@
 [color]
     ui = true
 [alias]
+    ck = checkout
     st = status
     s = status -sb
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short --since='1 days ago'

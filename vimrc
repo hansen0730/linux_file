@@ -271,7 +271,7 @@ set nu
 vmap <C-c> "+y
 
 " Color scheme
-"colorscheme molokai
+colorscheme molokai
 
 " Key map
 nmap <F8> :qall<CR>
