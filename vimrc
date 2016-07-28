@@ -125,7 +125,7 @@ set nowrapscan
 "set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,eol
 
 " Move cursor keep 3 line to button and top
-set scrolloff=3
+set scrolloff=2
 
 " Not flicker
 set novisualbell
@@ -174,7 +174,7 @@ if has("autocmd")
     autocmd FileType xml,html vmap <C-o> <ESC>'<i<!--<ESC>o<ESC>'>o-->
     autocmd FileType java,c,cpp,cs vmap <C-o> <ESC>'<o
     autocmd FileType html,text,php,vim,c,java,xml,bash,shell,perl,python setlocal textwidth=100
-    autocmd Filetype html,xml,xsl source $VIMRUNTIME/plugin/closetag.vim
+    autocmd Filetype html,xml,xsl source $HOME/.vim/plugin/closetag.vim/plugin/closetag.vim
     autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
       \ exe " normal g`\"" |
@@ -271,7 +271,7 @@ set nu
 vmap <C-c> "+y
 
 " Color scheme
-colorscheme molokai
+"colorscheme molokai
 
 " Key map
 nmap <F8> :qall<CR>
@@ -292,4 +292,4 @@ Bundle 'taglist.vim'
 Bundle 'txt.vim'
 Bundle 'closetag.vim'
 
-
+let g:JavaImpSortPkgSep=1

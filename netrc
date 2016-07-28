@@ -1,0 +1,11 @@
+machine shaasigit02
+login xxxx
+password xxxx
+
+machine github.com
+login xxxx
+password xxxx
+
+machine git.oschina.net
+login xxxx
+password xxxx

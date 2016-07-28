@@ -18,7 +18,8 @@ alias tmuxn='tmux new-session -s '
 alias tmuxk='tmux kill-session -t '
 alias tmuxa='tmux att -t '
 
-export LANG="en_US.UTF-8"
+export LANG="en_US.utf8"
+export LC_ALL="en_US.utf8"
 
 find_git_branch () 
 {
