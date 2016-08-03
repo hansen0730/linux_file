@@ -103,6 +103,13 @@ set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 
+" For Tmux env
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
 " can use 'command' tell me which line changed in file
 set report=0
 
