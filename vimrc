@@ -300,7 +300,7 @@ Bundle 'taglist.vim'
 Bundle 'txt.vim'
 Bundle 'closetag.vim'
 Bundle 'javaimp.vim'
-Bundle 'Yggdroot/LeaderF'
+Bundle 'https://github.com/Yggdroot/LeaderF.git'
 
 let g:JavaImpSortPkgSep=1
 
