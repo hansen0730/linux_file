@@ -4,6 +4,7 @@
 "set helplang=cn
 
 let g:winManagerWindowLayout='TagList|FileExplorer'
+let g:winManagerWidth=20
 nmap wm :WMToggle<CR>
 
 set completeopt=longest,menu
@@ -156,7 +157,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 " Use space replace tab
-"set expandtab
+set expandtab
 
 set nowrap
 
@@ -289,7 +290,7 @@ nmap <F10> :Tlist<CR>
 set nocompatible
 " Close file type for Bundle
 "filetype off
-set rtp+=~/.vim/Bundle/vundle/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'vundle'
 Bundle 'winmanager'
@@ -298,5 +299,26 @@ Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'txt.vim'
 Bundle 'closetag.vim'
+Bundle 'javaimp.vim'
+Bundle 'Yggdroot/LeaderF'
 
 let g:JavaImpSortPkgSep=1
+
+" Use Ctrl+f to use the Leaderf to find file
+nmap <C-f> :LeaderfFile<CR>
+
+function C_syntax()
+    set foldmethod=expr foldexpr=getline(v:lnum)="\v(^\s*//.*\n)+"
+    let c_no_comment_fold=1
+    ""autocmd FileType c setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^\s*//'
+    inoremap ' ''<ESC>i
+    inoremap " ""<ESC>i
+    inoremap ( ()<ESC>i
+    inoremap < <><ESC>i
+    inoremap [ []<ESC>i
+    inoremap { {<CR>}<ESC>O
+endfunction
+
+autocmd filetype c,cpp,h,hpp call C_syntax()
+"set foldmethod=expr foldexpr=getline(v:lnum)=~'^\s*'.&commentstring[0]
+
