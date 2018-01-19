@@ -238,7 +238,9 @@ let g:miniBufExplModSelTarget = 1
 
 " About cscope
 if has("cscope")
-    set csprg=/usr/bin/cscope
+    " set csprg=/usr/bin/cscope
+    " gtags for 
+    set cscopeprg='gtags-cscope'
     set cscopetag
     set csto=1
     set cst
@@ -272,11 +274,16 @@ if has("cscope")
 
 endif
 
+" gtags
+let GtagsCscope_Auto_Load = 1
+let CtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
+
 " Show line number
 set nu
 
 " Use Ctrl+c to copy
-vmap <C-c> "+y
+nmap <C-c> "+y
 
 " Color scheme
 "colorscheme molokai
@@ -300,12 +307,14 @@ Bundle 'taglist.vim'
 Bundle 'txt.vim'
 Bundle 'closetag.vim'
 Bundle 'javaimp.vim'
-Bundle 'https://github.com/Yggdroot/LeaderF.git'
+"Bundle 'Yggdroot/LeaderF'
+Bundle 'gtags.vim'
+Bundle 'multilobyte/gtags-cscope'
 
 let g:JavaImpSortPkgSep=1
 
 " Use Ctrl+f to use the Leaderf to find file
-nmap <C-f> :LeaderfFile<CR>
+"nmap <C-f> :LeaderfFile<CR>
 
 function C_syntax()
     set foldmethod=expr foldexpr=getline(v:lnum)="\v(^\s*//.*\n)+"
@@ -319,6 +328,6 @@ function C_syntax()
     inoremap { {<CR>}<ESC>O
 endfunction
 
-autocmd filetype c,cpp,h,hpp call C_syntax()
+" autocmd filetype c,cpp,h,hpp call C_syntax()
 "set foldmethod=expr foldexpr=getline(v:lnum)=~'^\s*'.&commentstring[0]
 
